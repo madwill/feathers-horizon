@@ -1,9 +1,9 @@
 # feathers-horizon
 
 [![Build Status](https://travis-ci.org/madwill/feathers-horizon.svg?branch=master)](https://travis-ci.org/madwill/feathers-horizon)
-[![Code Climate](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/badges/gpa.svg)](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git)
-[![Test Coverage](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/badges/coverage.svg)](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/coverage)
-[![Dependency Status](https://img.shields.io/david/https://github.com/madwill/horizon-feathers-plugin.git.svg?style=flat-square)](https://david-dm.org/https://github.com/madwill/horizon-feathers-plugin.git)
+<a href="https://codeclimate.com/github/madwill/feathers-horizon"><img src="https://codeclimate.com/github/madwill/feathers-horizon/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/madwill/feathers-horizon/coverage"><img src="https://codeclimate.com/github/madwill/feathers-horizon/badges/coverage.svg" /></a>
+[![GitHub issues](https://img.shields.io/github/issues/madwill/feathers-horizon.svg?style=flat-square)](https://github.com/madwill/feathers-horizon/issues)
 [![Download Status](https://img.shields.io/npm/dm/feathers-horizon.svg?style=flat-square)](https://www.npmjs.com/package/feathers-horizon)
 
 > Horizon.js feathers plugin
