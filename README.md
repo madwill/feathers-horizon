@@ -1,6 +1,6 @@
 # feathers-horizon
 
-[![Build Status](https://travis-ci.org/https://github.com/madwill/horizon-feathers-plugin.git.png?branch=master)](https://travis-ci.org/https://github.com/madwill/horizon-feathers-plugin.git)
+[![Build Status](https://travis-ci.org/madwill/feathers-horizon.svg?branch=master)](https://travis-ci.org/madwill/feathers-horizon)
 [![Code Climate](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/badges/gpa.svg)](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git)
 [![Test Coverage](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/badges/coverage.svg)](https://codeclimate.com/github/https://github.com/madwill/horizon-feathers-plugin.git/coverage)
 [![Dependency Status](https://img.shields.io/david/https://github.com/madwill/horizon-feathers-plugin.git.svg?style=flat-square)](https://david-dm.org/https://github.com/madwill/horizon-feathers-plugin.git)
