@@ -5,11 +5,10 @@ const horizon = require('@horizon/server');
 const Proto = require('uberproto');
 const debug = makeDebug('feathers-horizon');
 
-export default function init(options = {}) {
+export default function init (options = {}) {
   debug('Initializing feathers-horizon plugin');
-  return function feathersHorizon() {
+  return function feathersHorizon () {
     const app = this;
-    const _super = app.setup;
     const config = app.get('authentication');
     const rethinkConfig = app.get('rethinkdb');
 
@@ -40,30 +39,29 @@ export default function init(options = {}) {
       });
 
     Proto.mixin({
-      setup(server) {
-        const horizonServer = horizon(server, options);
+      setup (server) {
+        horizon(server, options);
         return this
           ._super
           .apply(this, arguments);
       }
     }, app);
 
-    function afterCreate(hook) {
+    function afterCreate (hook) {
       let id = hook.params.user.id;
       hook.result.hzToken = jwt.sign({
         id,
         provider: null
-      }, new Buffer(config.secret, 'base64'), {
+      }, Buffer.alloc(config.secret, 'base64'), {
         expiresIn: '1h',
         algorithm: 'HS512'
       } // adjust expiration time to taste.
       );
     }
 
-    function beforeCreateUser(hook) {
-      if (!hook.data.groups) 
-        hook.data.groups = ['default', 'authenticated'];
+    function beforeCreateUser (hook) {
+      if (!hook.data.groups) { hook.data.groups = ['default', 'authenticated']; }
       return hook;
     }
-  }
+  };
 }
