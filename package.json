@@ -1,7 +1,7 @@
 {
   "name": "feathers-horizon",
   "description": "Horizon.js feathers plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/https://github.com/madwill/horizon-feathers-plugin.git",
   "main": "lib/",
   "keywords": [
