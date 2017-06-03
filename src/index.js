@@ -3,10 +3,10 @@ import makeDebug from 'debug';
 const jwt = require('jsonwebtoken');
 const horizon = require('@horizon/server');
 const Proto = require('uberproto');
-const debug = makeDebug('feathers-horizon');
+const debug = makeDebug('feathersHorizon');
 
 export default function init (options = {}) {
-  debug('Initializing feathers-horizon plugin');
+  debug('Initializing feathersHorizon plugin');
   return function feathersHorizon () {
     const app = this;
     const config = app.get('authentication');
