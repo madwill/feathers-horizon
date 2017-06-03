@@ -1,3 +1,6 @@
+env:
+- CC_TEST_REPORTER_ID=1b47814db69c5fb8d484dbb778d0793766e7ef7c6cc51c65a2533c627a67d524
+
 language: node_js
 node_js:
   - 'node'
@@ -5,7 +8,7 @@ node_js:
   - '4'
 addons:
   code_climate:
-    repo_token: 'your repo token'
+    repo_token: '1b47814db69c5fb8d484dbb778d0793766e7ef7c6cc51c65a2533c627a67d524'
 notifications:
   email: false
 before_script:
