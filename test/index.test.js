@@ -8,6 +8,6 @@ describe('feathersHorizon', () => {
 
   it('basic functionality', () => {
     expect(typeof plugin).to.equal('function', 'It worked');
-    expect(plugin()).to.equal('feathersHorizon');
+    expect(typeof plugin()).to.equal('function','It worked');
   });
 });
