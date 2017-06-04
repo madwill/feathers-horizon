@@ -12,7 +12,7 @@
 
 ```
 npm install feathers-horizon --save
-```
+``` 
 
 ## Documentation
 
