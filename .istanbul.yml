@@ -3,6 +3,7 @@ instrumentation:
   root: ./src/
   excludes:
     - lib/
+    - example/
   include-all-sources: true
 reporting:
   print: summary
