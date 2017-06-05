@@ -8,11 +8,14 @@
 
 > Horizon.js feathers plugin, this plugin will start an horizon server instance using provided options or defaults feathers config. 
 
-##Goals
+## Goals
 
 Plugins intent to add missing horizon.js functionality by leveraging the excellent featherjs for backend. It uses feathers authentication for local strategy 
 
 This grants you the entire [featherjs ecosystem](https://github.com/feathersjs/feathers-docs/tree/master/ecosystem) around your horizon.js application
+
+## Thank you
+Made possible and inspired by the generous tailsu and his [Demo: third-party authentication for horizon](https://github.com/tailsu/horizon-custom-login)
 
 ## Installation
 
