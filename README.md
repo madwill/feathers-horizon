@@ -1,5 +1,7 @@
 # feathers-horizon
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/madwill/feathers-horizon.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/madwill/feathers-horizon.svg?branch=master)](https://travis-ci.org/madwill/feathers-horizon)
 <a href="https://codeclimate.com/github/madwill/feathers-horizon"><img src="https://codeclimate.com/github/madwill/feathers-horizon/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/madwill/feathers-horizon/coverage"><img src="https://codeclimate.com/github/madwill/feathers-horizon/badges/coverage.svg" /></a>
