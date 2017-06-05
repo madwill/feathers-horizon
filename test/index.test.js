@@ -1,7 +1,12 @@
 import { expect } from 'chai';
-import plugin from '../src';
+import feathersHorizon from '../src';
+import feathers from 'feathers';
+const configuration = require('feathers-configuration');
 
 describe('feathersHorizon', () => {
+  const app = feathers();
+  app.configure(configuration('./default.json'));
+
   beforeEach(() => {
 
   });
@@ -11,7 +16,10 @@ describe('feathersHorizon', () => {
   });
 
   it('basic functionality', () => {
-    expect(typeof plugin).to.equal('function', 'It worked');
-    expect(typeof plugin()).to.equal('object', 'It worked');
+    expect(typeof feathersHorizon).to.equal('function', 'It worked');
+    expect(typeof feathersHorizon()).to.equal('function', 'It worked');
+  });
+  it('Register plugin', () => {
+    app.configure(feathersHorizon());
   });
 });

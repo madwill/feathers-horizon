@@ -2,7 +2,7 @@
   "name": "feathers-horizon",
   "description": "Horizon.js feathers plugin",
   "version": "0.2.0",
-  "homepage": "https://github.com/https://github.com/madwill/horizon-feathers-plugin.git",
+  "homepage": "https://github.com/madwill/feathers-horizon",
   "main": "lib/",
   "keywords": [
     "feathers",
@@ -11,12 +11,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/https://github.com/madwill/horizon-feathers-plugin.git.git"
+    "url": "https://github.com/madwill/feathers-horizon.git"
   },
   "author": {
-    "name": "Feathers contributors",
-    "email": "hello@feathersjs.com",
-    "url": "https://feathersjs.com"
+    "name": "William.thivierge",
+    "email": "william.thivierge@gmail.com"    
   },
   "contributors": [],
   "bugs": {
@@ -51,6 +50,8 @@
   "dependencies": {
     "@horizon/server": "^2.0.0",
     "debug": "^2.6.8",
+    "feathers": "^2.1.3",
+    "feathers-configuration": "^0.4.1",
     "feathers-errors": "^2.8.1",
     "feathers-tests-fake-app-users": "^1.0.0",
     "i": "^0.3.5",
