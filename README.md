@@ -23,6 +23,23 @@ Made possible and inspired by the generous tailsu and his [Demo: third-party aut
 npm install feathers-horizon --save
 ``` 
 
+## Options (optionnal, will refer to feathers-configuration if provided)
+ expect a object with 
+
+* project_name: 'horizon'
+* rdb_host: 'localhost'
+* rdb_port: 28015
+* auto_create_collection: false
+* auto_create_index: false
+* permissions: true
+* path: '/horizon'
+* auth: 
+  * duration: '1d'
+  * new_user_group: 'authenticated'
+  * token_secret: null
+  * allow_anonymous: false
+  * allow_unauthenticated: false
+
 ## Create your app using feathers generators
 
 ```
@@ -32,6 +49,17 @@ npm install feathers-horizon --save
 ```
 
 Then import and configure the plugin after [Authentication](https://github.com/feathersjs/feathers-authentication) plugin
+
+```
+...
+const feathersHorizon = require('feathers-horizon');
+...
+app.configure(authentication);
+app.configure(feathersHorizon());
+...
+
+```
+
 ## Complete Example
 
 Here's an example of a Feathers server that uses `feathers-horizon`. 
