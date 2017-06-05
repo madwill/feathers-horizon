@@ -2,19 +2,26 @@ const jwt = require('jsonwebtoken');
 const horizon = require('@horizon/server');
 const Proto = require('uberproto');
 
-function init (options) {
+function init (options = {auth: {}}) {
   return function feathersHorizon () {
     const app = this;
     const config = app.get('authentication');
     const rethinkConfig = app.get('rethinkdb');
 
     const horizonOptions = {
-      project_name: options.project_name || rethinkConfig.db,
-      permissions:  options.permissions || false,
-      auto_create_index:  options.auto_create_index || true,
-      auto_create_collection:  options.auto_create_collection || true,
+      project_name: options.project_name || rethinkConfig.db || 'horizon',
+      rdb_host: options.rdb_host || 'localhost',
+      rdb_port: options.rdb_port || 28015,
+      permissions: options.permissions || false,
+      path: options.path || '/horizon',
+      auto_create_index: options.auto_create_index || true,
+      auto_create_collection: options.auto_create_collection || true,
       auth: {
-        token_secret:  options.auth.token_secret || config.secret
+        token_secret: options.auth.token_secret || config.secret,
+        allow_anonymous: options.auth.token_secret || false,
+        allow_unauthenticated: options.auth.allow_unauthenticated || false,
+        new_user_group: options.auth.new_user_group || 'authenticated',
+        duration: options.auth.new_user_group || '1d'
       }
     };
 
@@ -53,10 +60,9 @@ function init (options) {
         id,
         provider: null
       }, Buffer.from(config.secret, 'base64'), {
-        expiresIn: '1h',
+        expiresIn: horizonOptions.auth.duration,
         algorithm: 'HS512'
-      } // adjust expiration time to taste.
-      );
+      });
     };
 
     this.usersBeforeCreate = (hook) => {

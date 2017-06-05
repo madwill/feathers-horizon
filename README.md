@@ -20,7 +20,7 @@ This grants you the entire [featherjs ecosystem](https://github.com/feathersjs/f
 Made possible and inspired by the generous tailsu and his [Demo: third-party authentication for horizon](https://github.com/tailsu/horizon-custom-login)
 
 ## Roadmap
-- [x] 0.X - proof of concept - launch horizon in feather using application configuration .
+- [x] 0.x - proof of concept - launch horizon in feather using application configuration .
 - [ ] 1.0 - Better test coverage, error handling and full options.
 - [ ] 2.0 - Add horizon client for server side reactive queries.
 - [ ] 3.0 - Add user copy on auth hooks in case of non rethinkdb feather app.
@@ -32,7 +32,7 @@ npm install feathers-horizon --save
 ``` 
 
 ## Options (optionnal, will refer to feathers-configuration if provided)
- expect a object with 
+Options that can be passed to the [Horizon server constructor](http://horizon.io/docs/embed/) are identical to the similarly-named options that can be defined in the configuration file, with the same defaults:
 
 * project_name: 'horizon'
 * rdb_host: 'localhost'
