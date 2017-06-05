@@ -1,7 +1,7 @@
 {
   "name": "feathers-horizon",
   "description": "Horizon.js feathers plugin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/madwill/feathers-horizon",
   "main": "lib/",
   "keywords": [
@@ -15,7 +15,7 @@
   },
   "author": {
     "name": "William.thivierge",
-    "email": "william.thivierge@gmail.com"    
+    "email": "william.thivierge@gmail.com"
   },
   "contributors": [],
   "bugs": {
