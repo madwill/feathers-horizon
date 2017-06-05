@@ -46,15 +46,16 @@ app.configure(feathersHorizon());
 app.configure(middleware);
 app.hooks(appHooks);
 var User = {
-		email: 'admin@feathersjs.com',
-		password: 'admin',
-		permissions: ['*']
+  email: 'admin@feathersjs.com',
+  password: 'admin',
+  permissions: ['*']
 };
-app
-		.service('users')
-		.create(User)
-		.then(user => {
-				console.log('Created default user', user);
-		})
-		.catch(console.error);
+app.service('users')
+	.create(User)
+	.then(() => {
+	//console.log('Created default user', user);
+})
+	.catch(
+		//console.error
+);
 module.exports = app;

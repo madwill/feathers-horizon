@@ -9,12 +9,12 @@ function init (options) {
     const rethinkConfig = app.get('rethinkdb');
 
     const horizonOptions = {
-      project_name: rethinkConfig.db,
-      permissions: false,
-      auto_create_index: true,
-      auto_create_collection: true,
+      project_name: options.project_name || rethinkConfig.db,
+      permissions:  options.permissions || false,
+      auto_create_index:  options.auto_create_index || true,
+      auto_create_collection:  options.auto_create_collection || true,
       auth: {
-        token_secret: config.secret
+        token_secret:  options.auth.token_secret || config.secret
       }
     };
 

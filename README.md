@@ -19,6 +19,12 @@ This grants you the entire [featherjs ecosystem](https://github.com/feathersjs/f
 ## Thank you
 Made possible and inspired by the generous tailsu and his [Demo: third-party authentication for horizon](https://github.com/tailsu/horizon-custom-login)
 
+## Roadmap
+- [x] 0.X - proof of concept - launch horizon in feather using application configuration .
+- [ ] 1.0 - Better test coverage, error handling and full options.
+- [ ] 2.0 - Add horizon client for server side reactive queries.
+- [ ] 3.0 - Add user copy on auth hooks in case of non rethinkdb feather app.
+
 ## Installation
 
 ```

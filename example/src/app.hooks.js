@@ -33,6 +33,3 @@ module.exports = {
   }
 };
 
-function appAfterCreate(){
-  
-}

@@ -1,9 +1,6 @@
 const authentication = require('feathers-authentication');
 const jwt = require('feathers-authentication-jwt');
 const local = require('feathers-authentication-local');
-const horizon = require('@horizon/server');
-const jwt2 = require('jsonwebtoken');
-const Proto = require('uberproto');
 module.exports = function () {
   const app = this;
   const config = app.get('authentication');
