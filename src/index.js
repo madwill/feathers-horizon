@@ -52,7 +52,7 @@ function init (options) {
       hook.result.hzToken = jwt.sign({
         id,
         provider: null
-      }, Buffer.alloc(config.secret, 'base64'), {
+      }, Buffer.from(config.secret, 'base64'), {
         expiresIn: '1h',
         algorithm: 'HS512'
       } // adjust expiration time to taste.
