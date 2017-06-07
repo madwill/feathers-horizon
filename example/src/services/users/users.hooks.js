@@ -14,7 +14,7 @@ const restrict = [
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
+    find: [  authenticate('jwt') ],
     get: [ ...restrict ],
     create: [ ...restrict, hashPassword() ],
     update: [ ...restrict, hashPassword() ],
@@ -47,3 +47,11 @@ module.exports = {
     remove: []
   }
 };
+
+function findHookTracer(hook){
+    //let returnValue = authenticate('jwt');
+    //let what = returnValue();
+    console.log('hook', hook.data);
+    return hook;
+
+}

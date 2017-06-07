@@ -63,35 +63,66 @@
   </style>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script src="/horizon/horizon.js"></script>
+  <script src="/horizon/horizon.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/feathers-client@2.2.0/dist/feathers.min.js"></script>
   <script>
     $(function () {
       $('#login-form').submit(function (e) {
-        e.preventDefault();
-        var data = $('#login-form').serialize();
-        data += '&strategy=local';
-        $.ajax({
-          url: '/authentication',
-          type: 'POST',
-          dataType: "json",
-          data: data,
-          success: function (data) {
-            console.log('submitted', data);
-            var horizon = Horizon({
-              authType: {
-                storeLocally: false,
-                token: data.hzToken,
-              }
-            });
-            horizon.status().subscribe(function (status) {
-              $('#status').text(status.type);
-            });
-            horizon.connect();
-          }
-        })
+
+        //var socket = io();
+        var client = feathers()
+          .configure(feathers.hooks())
+          .configure(feathers.rest('http://localhost:3031').jquery(jQuery))
+          .configure(feathers.authentication({
+            header: 'Authorization',
+            storage: window.localStorage
+          }));
+
+        client.authenticate({
+          strategy: 'local',
+          type: 'local',
+          endpoint: '/authentication',
+          email: 'admin@feathersjs.com',
+          password: 'admin'
+        }).then(result => {
+          console.log(result);
+          return client.service('/testing')
+            .find()
+            .then(results => console.log('find all items\n', results));
+        }).then(result => {
+          console.log(result)
+        }).catch(error => {
+          console.log(error);
+        });     
+       
         return false;
       })
     })
+
+    function createHorizonConnection(hzToken) {
+      var horizon = Horizon({
+        authType: {
+          storeLocally: false,
+          token:hzToken,
+        }
+      });
+      horizon.status().subscribe(function (status) {
+        $('#status').text(status.type);
+      });
+      horizon.connect();
+      tryRestEndpoint(data.accessToken)
+    }
+
+    function tryRestEndpoint(accessToken) {
+
+      $.ajax({
+        url: "users",
+        type: 'POST',
+        // Fetch the stored token from localStorage and set in the header
+        headers: { "Authorization": 'bearer ' + accessToken }
+      });
+    }
   </script>
 </head>
 

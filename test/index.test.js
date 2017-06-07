@@ -4,11 +4,11 @@ import feathers from 'feathers';
 const configuration = require('feathers-configuration');
 
 describe('feathersHorizon', () => {
-  const app = feathers();
-  app.configure(configuration('./default.json'));
+  
 
   beforeEach(() => {
-
+    const app = feathers();
+    app.configure(configuration('./default.json'));
   });
 
   it('is CommonJS compatible', () => {

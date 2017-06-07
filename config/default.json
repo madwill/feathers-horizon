@@ -21,7 +21,7 @@
       "audience": "https://yourdomain.com",
       "subject": "anonymous",
       "issuer": "feathers",
-      "algorithm": "HS512",
+      "algorithm": "HS256",
       "expiresIn": "1d"
     },
     "local": {

@@ -28,9 +28,9 @@ app.use(helmet());
 app.use(compress());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
+app.use(favicon(path.join(__dirname, '../public', 'favicon.ico'))); //todo fix that in debug mode
 // Host the public folder
-app.use('/', feathers.static(app.get('public')));
+app.use('/', feathers.static(path.join(__dirname, '../public')));
 
 // Set up Plugins and providers
 app.configure(hooks());
