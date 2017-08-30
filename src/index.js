@@ -27,7 +27,8 @@ function init (options = {auth: {}}) {
 
     Proto.mixin({
       setup (server) {
-        this.horizonServer = horizon(server, horizonOptions);
+        server.horizonServer = horizon(server, horizonOptions);
+        server.horizon = horizon;
         return this
           ._super
           .apply(this, arguments);
