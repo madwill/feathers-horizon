@@ -4,6 +4,8 @@ const Proto = require('uberproto');
 
 function init (options = {auth: {}}) {
   return function feathersHorizon () {
+    this.testString = '**** * test STRING  * * ';
+
     const app = this;
     const config = app.get('authentication');
     const rethinkConfig = app.get('rethinkdb');
@@ -29,6 +31,7 @@ function init (options = {auth: {}}) {
       setup (server) {
         server.horizonServer = horizon(server, horizonOptions);
         server.horizon = horizon;
+        server.horizonPlugin = this;
         return this
           ._super
           .apply(this, arguments);
@@ -44,15 +47,6 @@ function init (options = {auth: {}}) {
           }
         });
       }
-
-      const userService = app.service('users');
-      if (userService) {
-        userService.hooks({
-          before: {
-            create: [this.usersBeforeCreate]
-          }
-        });
-      }
     };
 
     this.authenticationAfterCreate = (hook) => {
@@ -64,13 +58,6 @@ function init (options = {auth: {}}) {
         expiresIn: horizonOptions.auth.duration,
         algorithm: 'HS512'
       });
-    };
-
-    this.usersBeforeCreate = (hook) => {
-      if (!hook.data.groups) {
-        hook.data.groups = ['default', 'authenticated'];
-      }
-      return hook;
     };
 
     this.setHooks(app);
