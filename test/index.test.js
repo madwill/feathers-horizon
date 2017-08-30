@@ -4,10 +4,9 @@ import feathers from 'feathers';
 const configuration = require('feathers-configuration');
 
 describe('feathersHorizon', () => {
-  
+  const app = feathers();
 
-  beforeEach(() => {
-    const app = feathers();
+  beforeEach(() => {    
     app.configure(configuration('./default.json'));
   });
 
