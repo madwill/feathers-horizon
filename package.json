@@ -68,7 +68,7 @@
     "chai": "^4.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "jest": "^20.0.4",
-    "mocha": "^3.4.2",
+    "mocha": "^4.0.1",
     "semistandard": "^11.0.0",
     "shx": "^0.2.2"
   }
