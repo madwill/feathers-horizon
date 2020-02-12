@@ -57,7 +57,7 @@
     "i": "^0.3.5",
     "jsonwebtoken": "^7.4.1",
     "npm": "^5.0.2",
-    "uberproto": "^1.2.0",
+    "uberproto": "^2.0.6",
     "ws": "^3.0.0"
   },
   "devDependencies": {
